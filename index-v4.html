@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Academic Words for Reading and Listening</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  min-height: 100vh;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: bgMove 15s ease infinite alternate;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.container {
+  max-width: 950px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #e0e7ff;
+}
+
+.badge {
+  background: linear-gradient(45deg, #06b6d4, #3b82f6, #6366f1);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.exit-btn {
+  background: linear-gradient(45deg, #f43f5e, #ef4444);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.exit-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(45deg, #dc2626, #f87171);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0 0 14px;
+  color: #1e293b;
+  text-align: center;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 16px 0;
+  color: #334155;
+  text-align: center;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.7;
+  margin: 10px 0;
+}
+
+.subtle {
+  color: #64748b;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* Progress bar */
+.progress {
+  height: 14px;
+  background: rgba(59, 130, 246, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 18px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #06b6d4, #10b981, #3b82f6);
+  width: 0%;
+  transition: width 0.5s ease;
+  border-radius: 10px;
+}
+
+/* Timer */
+.timer {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 12px 0;
+  transition: 0.3s;
+}
+
+.timer.warning {
+  color: #dc2626;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* Inputs */
+input, textarea {
+  width: 100%;
+  max-width: 700px;
+  padding: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  font-size: 17px;
+  margin: 12px auto;
+  display: block;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* Buttons */
+.btn-row { text-align: center; margin: 20px 0; }
+
+button {
+  background: linear-gradient(45deg, #22c55e, #06b6d4, #3b82f6);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  transition: 0.3s;
+  margin: 6px;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.35);
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+}
+
+button:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Option buttons */
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 18px;
+  border-radius: 22px;
+  background: #f0fdfa;
+  border: 2px solid #22c55e;
+}
+
+@media (max-width: 600px) {
+  .options { grid-template-columns: 1fr; gap: 10px; padding: 12px; }
+}
+
+.option-btn {
+  background: #fff;
+  color: #1e293b;
+  border: 2px solid #e2e8f0;
+  padding: 16px;
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 70px;
+}
+
+.option-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #d1fae5, #ecfdf5);
+  border-color: #16a34a;
+  transform: translateY(-2px);
+}
+
+/* Feedback */
+.feedback {
+  margin: 20px 0;
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+
+.correct {
+  color: #16a34a;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.incorrect {
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Menu cards */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin: 28px 0;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  cursor: pointer;
+  border: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+}
+
+.menu-card h3 {
+  font-size: 23px;
+  margin: 12px 0;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.menu-card p {
+  font-size: 15px;
+  color: #64748b;
+}
+
+/* Study cards */
+.study-card {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.study-card.flipped { transform: rotateY(180deg); }
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+}
+
+.card-front {
+  background: linear-gradient(45deg, #10b981, #3b82f6);
+  color: #fff;
+  font-weight: 700;
+  font-size: 26px;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+.card-back {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.6;
+  transform: rotateY(180deg);
+}
+
+/* Channels */
+.channel-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.channel-box {
+  padding: 10px 18px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.channel-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.channel-box.essay { background: linear-gradient(45deg, #3b82f6, #6366f1); }
+.channel-box.speaking { background: linear-gradient(45deg, #10b981, #059669); }
+.channel-box.mock { background: linear-gradient(45deg, #f59e0b, #d97706); }
+.channel-box.results { background: linear-gradient(45deg, #8b5cf6, #7c3aed); }
+
+.word-with-audio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 25px;
+}
+</style>
+
+</head>
+<body>
+<div class="container" id="app"></div>
+<script>
+// ====================== CONFIG ======================
+// Telegram is sent via /api/telegram (Vercel serverless). No tokens are stored in this HTML.
+
+// ====================== GLOBALS ======================
+let currentPageKey = 'unit70';
+let currentExerciseType = '';
+let qIndex = 0, qOrder = [], score = 0, answers = [];
+let studentName = '', studentSurname = '';
+let timerId = null, timeLeft = 0;
+let studyIndex = 0;
+const app = document.getElementById('app');
+
+// ====================== DATA ======================
+const GROUPS = {
+  unit1: [
+    {word:"analyse",syn:"examine",def:"to study something carefully to understand it",ex:"Researchers often .............. data before drawing conclusions about environmental changes."},
+    {word:"approach",syn:"method",def:"a way of doing or dealing with something",ex:"A balanced .............. to education includes both theory and practice."},
+    {word:"area",syn:"region",def:"a particular part or section of something",ex:"The industrial .............. of the city has expanded significantly over the past decade."},
+    {word:"assess",syn:"evaluate",def:"to judge or estimate the value or quality of something",ex:"Examiners .............. students’ writing based on coherence, grammar, and vocabulary."},
+    {word:"assume",syn:"suppose",def:"to believe something is true without proof",ex:"Many people .............. that technology always leads to better productivity."},
+    {word:"authority",syn:"power",def:"the right or ability to control or command others",ex:"Local .............. should enforce stricter environmental regulations."},
+    {word:"available",syn:"accessible",def:"ready for use or easily obtained",ex:"Information about climate change is widely .............. online nowadays."},
+    {word:"benefit",syn:"advantage",def:"a helpful or good effect",ex:"Regular exercise provides numerous .............. for both physical and mental health."},
+    {word:"concept",syn:"idea",def:"a general notion or abstract principle",ex:"The .............. of globalization affects almost every aspect of modern life."},
+    {word:"consist",syn:"contain",def:"to be made up or composed of",ex:"A healthy diet should .............. mainly of fruits, vegetables, and whole grains."},
+    {word:"constitutional",syn:"legal",def:"related to the system of laws or principles of a country",ex:"Freedom of speech is a .............. right in many democratic nations."},
+    {word:"context",syn:"situation",def:"the circumstances or setting of an event or idea",ex:"Words can change meaning depending on their .............. in a sentence."},
+    {word:"contract",syn:"agreement",def:"a formal written or spoken deal between parties",ex:"Employees must sign a .............. before beginning their new position."},
+    {word:"create",syn:"produce",def:"to bring something new into existence",ex:"Scientists aim to .............. sustainable solutions for energy production."},
+    {word:"data",syn:"information",def:"facts and statistics collected for reference or analysis",ex:"Governments rely on accurate .............. to make informed policy decisions."},
+    {word:"definition",syn:"meaning",def:"the exact explanation of a word or concept",ex:"The .............. of success varies from person to person."},
+    {word:"derived",syn:"obtained",def:"developed or taken from another source",ex:"Many English words are .............. from Latin roots."},
+    {word:"distribution",syn:"spread",def:"the way something is shared or arranged",ex:"Unequal income .............. remains a major social issue worldwide."},
+    {word:"economic",syn:"financial",def:"related to production and use of money or resources",ex:"The government introduced reforms to boost .............. growth."},
+    {word:"environment",syn:"surroundings",def:"conditions in which someone or something lives",ex:"Protecting the natural .............. should be a global priority."},
+    {word:"established",syn:"founded",def:"officially created or accepted for a long time",ex:"The university was .............. more than a century ago."},
+    {word:"estimate",syn:"approximate",def:"to make a rough calculation of value or amount",ex:"Experts .............. that global temperatures will rise by two degrees by 2050."},
+    {word:"evidence",syn:"proof",def:"information that shows something is true",ex:"There is clear .............. linking air pollution to health problems."},
+    {word:"export",syn:"sell abroad",def:"to send goods to another country for sale",ex:"The country continues to .............. large quantities of agricultural products."},
+    {word:"factors",syn:"elements",def:"things that influence or contribute to a result",ex:"Several .............. affect a student’s academic performance, such as motivation and environment."}
+  ],
+
+  unit2: [
+    {word:"financial",syn:"monetary",def:"related to money or fiscal matters",ex:"Many students face .............. difficulties while studying abroad."},
+    {word:"formula",syn:"rule",def:"a fixed method or mathematical expression",ex:"Economists often use a specific .............. to calculate inflation rates."},
+    {word:"function",syn:"purpose",def:"the role or activity that something is designed for",ex:"The main .............. of education is to prepare individuals for real-world challenges."},
+    {word:"identified",syn:"recognized",def:"found or named as being a particular thing",ex:"The scientist .............. a new species of insect in the Amazon rainforest."},
+    {word:"income",syn:"earnings",def:"money received from work or investments",ex:"People with higher .............. tend to have better access to healthcare."},
+    {word:"indicate",syn:"show",def:"to point out or make something clear",ex:"The results clearly .............. that early education improves literacy rates."},
+    {word:"individual",syn:"person",def:"a single human being",ex:"Every .............. has the right to express their opinion freely."},
+    {word:"interpretation",syn:"explanation",def:"the act of explaining meaning",ex:"Students gave their own .............. of the poem during class discussion."},
+    {word:"involved",syn:"engaged",def:"taking part in or connected with something",ex:"She was deeply .............. in several volunteer programs at university."},
+    {word:"issues",syn:"problems",def:"important topics or matters for discussion",ex:"Environmental .............. such as deforestation must be addressed urgently."},
+    {word:"labour",syn:"work",def:"physical or mental effort for producing goods or services",ex:"The demand for skilled .............. is increasing in many industries."},
+    {word:"legal",syn:"lawful",def:"allowed or recognized by law",ex:"It is not .............. to drive without a valid license."},
+    {word:"legislation",syn:"law",def:"a set of laws made by a government",ex:"The government passed new .............. to regulate online privacy."},
+    {word:"major",syn:"main",def:"more important or greater in degree",ex:"A .............. reason for migration is the search for better job opportunities."},
+    {word:"method",syn:"technique",def:"a particular way of doing something",ex:"Teachers use different .............. to make lessons more interactive."},
+    {word:"occur",syn:"happen",def:"to take place or come into existence",ex:"Natural disasters often .............. without warning."},
+    {word:"percent",syn:"proportion",def:"one part in every hundred",ex:"Over 70 .............. of participants agreed that exercise improves concentration."},
+    {word:"period",syn:"duration",def:"a specific length of time",ex:"The study was conducted over a ten-year .............. to ensure accuracy."},
+    {word:"policy",syn:"rule",def:"a plan of action adopted by an organization or government",ex:"The new environmental .............. aims to reduce carbon emissions."},
+    {word:"principle",syn:"standard",def:"a basic belief or rule that guides behavior",ex:"Honesty is a fundamental .............. in building trust."},
+    {word:"procedure",syn:"process",def:"an established or official way of doing something",ex:"Applicants must follow the correct .............. when submitting documents."},
+    {word:"process",syn:"operation",def:"a series of steps to achieve a result",ex:"The recycling .............. helps minimize environmental waste."},
+    {word:"required",syn:"necessary",def:"needed or demanded",ex:"A passport is .............. to travel abroad."},
+    {word:"research",syn:"investigation",def:"a detailed study to discover information",ex:"Universities invest heavily in scientific .............. to drive innovation."},
+    {word:"response",syn:"reply",def:"an answer or reaction to something",ex:"The government’s quick .............. helped control the spread of the virus."}
+  ],
+
+  unit3: [
+    {word:"role",syn:"position",def:"the function or duty of a person or thing",ex:"Parents play a vital .............. in shaping children’s behavior."},
+    {word:"section",syn:"part",def:"a distinct portion or subdivision",ex:"Please complete the final .............. of the application form."},
+    {word:"sector",syn:"division",def:"an area of activity within the economy or society",ex:"The tourism .............. contributes greatly to national income."},
+    {word:"significant",syn:"important",def:"having a noticeable or meaningful effect",ex:"There has been a .............. improvement in students’ writing skills."},
+    {word:"similar",syn:"alike",def:"nearly the same",ex:"Both reports present .............. results regarding public health."},
+    {word:"source",syn:"origin",def:"the place or thing from which something comes",ex:"The Internet has become the main .............. of information for students."},
+    {word:"specific",syn:"particular",def:"clearly defined or identified",ex:"The teacher gave .............. instructions for the experiment."},
+    {word:"structure",syn:"framework",def:"the arrangement or organization of parts",ex:"The essay’s .............. must include an introduction, body, and conclusion."},
+    {word:"theory",syn:"idea",def:"a system of ideas intended to explain something",ex:"Darwin’s .............. of evolution transformed our understanding of biology."},
+    {word:"variable",syn:"changeable",def:"likely to vary or differ",ex:"Weather is a .............. factor that can affect agricultural production."},
+    {word:"achieve",syn:"accomplish",def:"to successfully reach a goal",ex:"Consistent effort is essential to .............. high scores in IELTS."},
+    {word:"acquisition",syn:"purchase",def:"the act of gaining or obtaining something",ex:"Language .............. requires regular practice and exposure."},
+    {word:"administration",syn:"management",def:"the process of running an organization",ex:"The university’s .............. announced a new scholarship program."},
+    {word:"affect",syn:"influence",def:"to cause a change in something",ex:"Economic instability can .............. people’s mental well-being."},
+    {word:"appropriate",syn:"suitable",def:"correct or right for a situation",ex:"Students should use .............. vocabulary in formal essays."},
+    {word:"aspect",syn:"feature",def:"a particular part or side of something",ex:"One important .............. of culture is language."},
+    {word:"assist",syn:"help",def:"to give support or aid",ex:"Volunteers .............. the elderly with their daily activities."},
+    {word:"category",syn:"group",def:"a class or type of things that share characteristics",ex:"Pollution can be divided into several .............. such as air and water."},
+    {word:"chapter",syn:"section",def:"a separate part of a book or text",ex:"The final .............. of the report summarizes all findings."},
+    {word:"commission",syn:"committee",def:"an official group given authority to do something",ex:"The government formed a .............. to investigate climate change."},
+    {word:"community",syn:"society",def:"a group of people living in the same area or sharing interests",ex:"A strong .............. spirit helps improve neighborhood safety."},
+    {word:"complex",syn:"complicated",def:"consisting of many connected parts",ex:"Global warming is a .............. issue requiring international cooperation."},
+    {word:"computer",syn:"device",def:"an electronic machine for processing information",ex:"Most students rely on a .............. for research and assignments."},
+    {word:"conclusion",syn:"result",def:"a judgment or decision reached after reasoning",ex:"In .............., renewable energy is the key to a sustainable future."},
+    {word:"conduct",syn:"perform",def:"to organize or carry out something",ex:"Researchers will .............. interviews to gather detailed feedback."}
+  ],
+
+  unit4: [
+    {word:"consequence",syn:"result",def:"an effect or outcome of an action",ex:"Poor planning can lead to negative .............. in project development."},
+    {word:"construction",syn:"building",def:"the act or process of building something",ex:"The government has funded new road .............. across the country."},
+    {word:"consumer",syn:"buyer",def:"a person who purchases goods or services",ex:"Modern .............. prefer online shopping for convenience."},
+    {word:"credit",syn:"trust",def:"an arrangement to receive goods or money before payment",ex:"Many students rely on .............. cards to cover tuition expenses."},
+    {word:"cultural",syn:"social",def:"relating to the ideas, customs, or behaviors of a society",ex:"Festivals reflect a nation’s .............. identity and traditions."},
+    {word:"design",syn:"plan",def:"to create or arrange something with a purpose",ex:"Engineers .............. energy-efficient buildings to reduce emissions."},
+    {word:"distinction",syn:"difference",def:"a clear contrast between two things",ex:"There is a clear .............. between academic and general vocabulary."},
+    {word:"element",syn:"component",def:"a basic or essential part",ex:"Water is a key .............. of all living organisms."},
+    {word:"equation",syn:"formula",def:"a mathematical statement showing equality",ex:"Students must solve each .............. carefully during the test."},
+    {word:"evaluation",syn:"assessment",def:"the act of judging or determining value",ex:"The final .............. is based on both written and oral performance."},
+    {word:"feature",syn:"characteristic",def:"a distinctive quality or part",ex:"One .............. of modern cities is the presence of skyscrapers."},
+    {word:"final",syn:"last",def:"coming at the end",ex:"The .............. decision will be announced by the committee next week."},
+    {word:"focus",syn:"concentrate",def:"to direct attention or effort on something",ex:"Learners should .............. on improving their weak areas."},
+    {word:"impact",syn:"influence",def:"a strong effect or impression",ex:"The Internet has had a huge .............. on how people communicate."},
+    {word:"injury",syn:"harm",def:"physical damage to the body",ex:"Athletes should warm up properly to avoid .............. during exercise."},
+    {word:"institute",syn:"organization",def:"an official body for education or research",ex:"The .............. offers free training for international students."},
+    {word:"invest",syn:"allocate",def:"to put money or time into something expecting benefit",ex:"The company decided to .............. in renewable energy projects."},
+    {word:"item",syn:"object",def:"a single thing in a list or group",ex:"Each .............. on the questionnaire must be completed carefully."},
+    {word:"journal",syn:"magazine",def:"a regularly published academic or professional work",ex:"The study was published in a leading scientific .............."},
+    {word:"maintain",syn:"preserve",def:"to keep something in good condition",ex:"It is essential to .............. balance between work and personal life."},
+    {word:"normal",syn:"usual",def:"typical or expected",ex:"It is quite .............. for students to feel nervous before exams."},
+    {word:"obtain",syn:"get",def:"to gain or receive something",ex:"Applicants must .............. official approval before starting construction."},
+    {word:"participate",syn:"join",def:"to take part in an activity",ex:"Students are encouraged to .............. in extracurricular programs."},
+    {word:"perceive",syn:"notice",def:"to become aware of through the senses",ex:"People often .............. success differently based on their background."},
+    {word:"positive",syn:"optimistic",def:"showing hope or confidence",ex:"Maintaining a .............. attitude helps individuals overcome challenges."}
+  ],
+
+  unit5: [
+    {word:"potential",syn:"possible",def:"having the ability to develop or happen",ex:"Renewable energy has great .............. to replace fossil fuels."},
+    {word:"previous",syn:"earlier",def:"existing or happening before",ex:"The .............. study showed similar results regarding pollution levels."},
+    {word:"primary",syn:"main",def:"first in importance or order",ex:"The .............. aim of education is to promote critical thinking."},
+    {word:"purchase",syn:"buy",def:"to obtain something in exchange for money",ex:"Many people .............. goods online for convenience."},
+    {word:"range",syn:"variety",def:"the extent or scope of something",ex:"The shop offers a wide .............. of international products."},
+    {word:"region",syn:"area",def:"a part of a country or world",ex:"This .............. is famous for its historical monuments."},
+    {word:"regulation",syn:"rule",def:"an official guideline or requirement",ex:"New traffic .............. have been introduced to reduce accidents."},
+    {word:"relevant",syn:"applicable",def:"closely connected to the topic",ex:"Candidates should provide .............. examples in their essays."},
+    {word:"resident",syn:"inhabitant",def:"a person who lives in a place",ex:"Every .............. must register their address with local authorities."},
+    {word:"resource",syn:"supply",def:"something useful or valuable for support",ex:"Water is one of the most vital natural .............. on Earth."},
+    {word:"restrict",syn:"limit",def:"to keep within certain boundaries",ex:"Governments may .............. the use of plastic bags to protect nature."},
+    {word:"secure",syn:"safe",def:"protected from danger or loss",ex:"People should feel .............. in their own neighborhoods."},
+    {word:"seek",syn:"search",def:"to look for or try to obtain",ex:"Many graduates .............. job opportunities abroad."},
+    {word:"select",syn:"choose",def:"to pick out from a group",ex:"Applicants must .............. two courses for their first semester."},
+    {word:"site",syn:"location",def:"a place where something happens",ex:"The company selected a coastal .............. for the new factory."},
+    {word:"strategy",syn:"plan",def:"a method for achieving a goal",ex:"A clear .............. is required to improve economic stability."},
+    {word:"survey",syn:"study",def:"an investigation to collect data",ex:"The university conducted a .............. to analyze student satisfaction."},
+    {word:"text",syn:"passage",def:"a written or printed piece of work",ex:"Students must summarize the given .............. in their own words."},
+    {word:"tradition",syn:"custom",def:"a long-established practice or belief",ex:"Celebrating national holidays is an important .............. in many cultures."},
+    {word:"transfer",syn:"move",def:"to shift from one place to another",ex:"Students can .............. their credits to another university if needed."},
+    {word:"alternative",syn:"substitute",def:"something different that can be chosen instead",ex:"Online learning provides an .............. to traditional classrooms."},
+    {word:"circumstance",syn:"situation",def:"a condition affecting an event",ex:"Under certain .............., students may submit work late."},
+    {word:"comment",syn:"remark",def:"a statement expressing an opinion",ex:"The teacher left a positive .............. on my essay draft."},
+    {word:"compensate",syn:"repay",def:"to give something in return for loss",ex:"Workers were .............. for extra hours spent on the project."},
+    {word:"component",syn:"part",def:"an element of a larger system",ex:"Motivation is a key .............. of academic success."}
+  ],
+
+  unit6: [
+    {word:"consent",syn:"approval",def:"permission for something to happen",ex:"No action can be taken without the .............. of both parties."},
+    {word:"considerable",syn:"substantial",def:"large in amount or importance",ex:"The company invested a .............. amount of money in research."},
+    {word:"constant",syn:"continuous",def:"happening all the time",ex:"There is .............. pressure on students to achieve high results."},
+    {word:"constrain",syn:"restrict",def:"to limit or control something",ex:"Financial difficulties often .............. people from pursuing higher education."},
+    {word:"contribute",syn:"donate",def:"to give or add something to help",ex:"Citizens should .............. to community projects for public benefit."},
+    {word:"convene",syn:"gather",def:"to come together for a meeting",ex:"The committee will .............. tomorrow to discuss the proposal."},
+    {word:"coordinate",syn:"organize",def:"to arrange people or things to work together",ex:"Managers must .............. effectively to meet project deadlines."},
+    {word:"core",syn:"center",def:"the most important or central part",ex:"Education forms the .............. of national development."},
+    {word:"corporate",syn:"business",def:"relating to a company or organization",ex:"Many .............. firms have adopted flexible working systems."},
+    {word:"correspond",syn:"match",def:"to be similar or equivalent",ex:"The findings .............. with previous studies on climate change."},
+    {word:"criteria",syn:"standards",def:"rules or principles for judging something",ex:"The selection .............. include academic achievement and leadership skills."},
+    {word:"deduce",syn:"infer",def:"to reach a conclusion using reasoning",ex:"From the data, we can .............. that pollution levels are increasing."},
+    {word:"demonstrate",syn:"show",def:"to explain or prove by example",ex:"The teacher will .............. how renewable energy works."},
+    {word:"document",syn:"record",def:"a written or printed paper providing information",ex:"Applicants must submit every required .............. for verification."},
+    {word:"dominate",syn:"control",def:"to have power or influence over others",ex:"Large corporations often .............. the global market."},
+    {word:"emphasis",syn:"focus",def:"special importance given to something",ex:"Schools should place more .............. on creativity and innovation."},
+    {word:"ensure",syn:"guarantee",def:"to make certain that something happens",ex:"The government must .............. equal opportunities for all citizens."},
+    {word:"exclude",syn:"omit",def:"to leave out or not include",ex:"The survey .............. participants under the age of 18."},
+    {word:"framework",syn:"structure",def:"an organized system or basis",ex:"A legal .............. is necessary to support digital transactions."},
+    {word:"fund",syn:"finance",def:"to provide money for a purpose",ex:"The organization aims to .............. environmental conservation programs."},
+    {word:"illustrate",syn:"explain",def:"to make clear with examples or pictures",ex:"The lecturer used diagrams to .............. complex theories."},
+    {word:"immigrate",syn:"relocate",def:"to move permanently to another country",ex:"Many families .............. in search of better living conditions."},
+    {word:"imply",syn:"suggest",def:"to express indirectly",ex:"His tone seemed to .............. dissatisfaction with the results."},
+    {word:"initial",syn:"first",def:"happening at the beginning",ex:"The .............. stage of the project focused on planning and research."},
+    {word:"instance",syn:"example",def:"a particular case of something",ex:"An .............. of climate change impact can be seen in melting glaciers."}
+  ],
+
+  unit7: [
+    {word:"interact",syn:"communicate",def:"to act in response to others",ex:"Students should .............. more with native speakers to improve fluency."},
+    {word:"justify",syn:"explain",def:"to give reasons to show something is right",ex:"The writer failed to .............. his opinion with strong evidence."},
+    {word:"layer",syn:"coating",def:"a single thickness of material",ex:"The earth’s atmosphere is made up of several .............. of gases."},
+    {word:"link",syn:"connect",def:"to join or relate things together",ex:"Researchers .............. poor diet to increased health risks."},
+    {word:"locate",syn:"find",def:"to discover the position of something",ex:"Archaeologists managed to .............. the ruins of an ancient city."},
+    {word:"maximise",syn:"increase",def:"to make as large or great as possible",ex:"Students should .............. their study time before exams."},
+    {word:"minor",syn:"small",def:"less important or serious",ex:"There were only .............. changes to the original plan."},
+    {word:"negate",syn:"deny",def:"to make ineffective or declare untrue",ex:"One mistake can .............. all previous achievements."},
+    {word:"outcome",syn:"result",def:"the final effect or consequence",ex:"The .............. of the experiment supported the researcher’s hypothesis."},
+    {word:"partner",syn:"associate",def:"a person who shares in an activity or business",ex:"Each student must choose a .............. for the group presentation."},
+    {word:"philosophy",syn:"belief",def:"a system of ideas about life or knowledge",ex:"His .............. of education emphasizes independent thinking."},
+    {word:"physical",syn:"bodily",def:"relating to the body",ex:"Regular .............. exercise can prevent many diseases."},
+    {word:"proportion",syn:"ratio",def:"a part compared to the whole",ex:"A high .............. of young people prefer studying abroad."},
+    {word:"publish",syn:"release",def:"to prepare and issue written material",ex:"The university plans to .............. the research findings online."},
+    {word:"react",syn:"respond",def:"to act because of a stimulus",ex:"People .............. differently to stressful situations."},
+    {word:"register",syn:"record",def:"to officially enter or sign up",ex:"Students must .............. for courses before the deadline."},
+    {word:"rely",syn:"depend",def:"to trust or need someone or something",ex:"Many elderly people .............. on public healthcare services."},
+    {word:"remove",syn:"eliminate",def:"to take away from a place",ex:"It is important to .............. outdated information from the report."},
+    {word:"scheme",syn:"plan",def:"a systematic program or arrangement",ex:"The government launched a housing .............. for low-income families."},
+    {word:"sequence",syn:"order",def:"a particular arrangement or pattern",ex:"The steps must be followed in the correct .............. to avoid confusion."},
+    {word:"sex",syn:"gender",def:"the biological distinction between male and female",ex:"The census collects data about age and .............. distribution."},
+    {word:"shift",syn:"change",def:"to move from one position to another",ex:"There has been a major .............. in public attitudes toward sustainability."},
+    {word:"specify",syn:"state",def:"to identify clearly or precisely",ex:"The instructions .............. the materials required for the task."},
+    {word:"sufficient",syn:"enough",def:"as much as is needed",ex:"Applicants must provide .............. evidence to support their claims."},
+    {word:"task",syn:"duty",def:"a piece of work to be done",ex:"Completing the report was a challenging .............. for the team."}
+  ],
+
+  unit8: [
+    {word:"technical",syn:"practical",def:"related to applied science or skill",ex:"The course provides .............. training in computer programming."},
+    {word:"technique",syn:"method",def:"a way of performing a task",ex:"Students learn various writing .............. to improve their essays."},
+    {word:"technology",syn:"innovation",def:"the use of science for practical purposes",ex:"Advances in .............. have transformed the way we communicate."},
+    {word:"valid",syn:"acceptable",def:"based on truth or logic",ex:"Only .............. arguments supported by data will be considered."},
+    {word:"volume",syn:"amount",def:"the quantity or space occupied",ex:"The .............. of traffic has increased significantly in urban areas."},
+    {word:"access",syn:"entry",def:"the right or ability to approach or use",ex:"Many people still lack .............. to quality education."},
+    {word:"adequate",syn:"sufficient",def:"good enough in quality or quantity",ex:"The report was not supported by .............. evidence."},
+    {word:"annual",syn:"yearly",def:"happening once every year",ex:"The organization releases an .............. report on its activities."},
+    {word:"apparent",syn:"clear",def:"easy to see or understand",ex:"The benefits of regular exercise are .............. to everyone."},
+    {word:"approximate",syn:"rough",def:"nearly correct but not exact",ex:"The .............. cost of living in big cities is much higher than before."},
+    {word:"attitude",syn:"opinion",def:"a way of thinking or feeling",ex:"A positive .............. helps people achieve their goals."},
+    {word:"attribute",syn:"quality",def:"a characteristic or feature",ex:"Patience is an important .............. of a good leader."},
+    {word:"civil",syn:"polite",def:"relating to citizens or good behavior",ex:"The debate should remain .............. even when opinions differ."},
+    {word:"code",syn:"law",def:"a system of rules or symbols",ex:"Each employee must follow the company’s ethical .............."},
+    {word:"commit",syn:"promise",def:"to carry out or dedicate oneself to something",ex:"The organization is .............. to reducing carbon emissions."},
+    {word:"communicate",syn:"convey",def:"to share or exchange information",ex:"Students must learn how to .............. their ideas clearly in essays."},
+    {word:"concentrate",syn:"focus",def:"to give attention to one thing",ex:"It’s difficult to .............. when there is too much noise."},
+    {word:"confer",syn:"discuss",def:"to talk or exchange ideas",ex:"The teachers .............. with the principal about curriculum updates."},
+    {word:"contrast",syn:"differ",def:"to show differences",ex:"The essay must .............. rural and urban lifestyles effectively."},
+    {word:"cycle",syn:"repeat",def:"a series of events that happen again and again",ex:"The water .............. is an essential part of Earth’s ecosystem."},
+    {word:"debate",syn:"argue",def:"to discuss opposing views",ex:"Students will .............. whether social media does more harm than good."},
+    {word:"despite",syn:"although",def:"even though something happens",ex:".............. facing many challenges, the project was successful."},
+    {word:"dimension",syn:"measurement",def:"the size or extent of something",ex:"The problem has a social as well as an economic .............."},
+    {word:"domestic",syn:"internal",def:"relating to the home or country",ex:"Tourism contributes significantly to the .............. economy."},
+    {word:"emerge",syn:"appear",def:"to come into view or existence",ex:"New ideas .............. when people work collaboratively."}
+  ],
+
+  unit9: [
+    {word:"error",syn:"mistake",def:"something done incorrectly",ex:"A small .............. in data analysis can lead to inaccurate results."},
+    {word:"ethnic",syn:"cultural",def:"relating to a particular race or group",ex:"The country celebrates its rich .............. diversity through festivals."},
+    {word:"goal",syn:"aim",def:"something you want to achieve",ex:"Setting clear .............. helps students stay motivated."},
+    {word:"grant",syn:"allow",def:"to give or permit officially",ex:"The university will .............. scholarships to top-performing students."},
+    {word:"hence",syn:"therefore",def:"for that reason",ex:"He studied hard, .............. he achieved the highest grade."},
+    {word:"hypothesis",syn:"theory",def:"an idea that explains facts and can be tested",ex:"The scientist proposed a .............. to explain the unusual results."},
+    {word:"implement",syn:"apply",def:"to put a plan into action",ex:"Schools must .............. new safety policies immediately."},
+    {word:"implicate",syn:"involve",def:"to show that someone or something is connected",ex:"The report .............. several companies in the environmental scandal."},
+    {word:"impose",syn:"force",def:"to make someone accept something",ex:"The government decided to .............. new taxes on imported goods."},
+    {word:"integrate",syn:"combine",def:"to join parts into a whole",ex:"The program aims to .............. technology into classroom learning."},
+    {word:"internal",syn:"inside",def:"existing within something",ex:"The company conducted an .............. review of its procedures."},
+    {word:"investigate",syn:"examine",def:"to look into carefully",ex:"Scientists continue to .............. the causes of global warming."},
+    {word:"job",syn:"occupation",def:"a paid position of employment",ex:"Finding a suitable .............. after graduation can be challenging."},
+    {word:"label",syn:"tag",def:"a name or phrase used to identify something",ex:"Each product must display a clear .............. with safety information."},
+    {word:"mechanism",syn:"system",def:"a process or structure that works together",ex:"The immune system is a complex .............. that protects the body."},
+    {word:"obvious",syn:"clear",def:"easy to see or understand",ex:"It is .............. that education plays a key role in development."},
+    {word:"occupy",syn:"inhabit",def:"to live in or fill a space",ex:"Many people .............. apartments in the city center."},
+    {word:"option",syn:"choice",def:"something that can be selected",ex:"Studying abroad is an attractive .............. for many students."},
+    {word:"output",syn:"production",def:"the amount produced",ex:"The factory increased its .............. to meet growing demand."},
+    {word:"overall",syn:"total",def:"including everything",ex:"The .............. results of the survey were positive."},
+    {word:"parallel",syn:"similar",def:"having comparable parts or qualities",ex:"There are .............. trends in population growth across different regions."},
+    {word:"parameter",syn:"limit",def:"a boundary or rule defining something",ex:"Researchers set clear .............. for the experiment."},
+    {word:"phase",syn:"stage",def:"a distinct period or step",ex:"The project entered its final .............. of development."},
+    {word:"predict",syn:"forecast",def:"to say what will happen in the future",ex:"Experts .............. a rise in global temperatures by 2050."},
+    {word:"principal",syn:"main",def:"most important",ex:"The .............. reason for deforestation is agricultural expansion."}
+  ],
+
+  unit10: [
+    {word:"prior",syn:"previous",def:"coming before something else",ex:"Applicants must have .............. experience in the field."},
+    {word:"professional",syn:"expert",def:"relating to a job requiring skill or education",ex:"The company only hires .............. translators for legal documents."},
+    {word:"project",syn:"plan",def:"a planned piece of work",ex:"The research .............. will focus on renewable energy."},
+    {word:"promote",syn:"encourage",def:"to help something grow or succeed",ex:"The campaign aims to .............. healthy eating habits."},
+    {word:"regime",syn:"government",def:"a system of management or rule",ex:"The new .............. introduced several economic reforms."},
+    {word:"resolve",syn:"settle",def:"to find a solution to a problem",ex:"The manager helped .............. the conflict among employees."},
+    {word:"retain",syn:"keep",def:"to continue to have or hold",ex:"Students should .............. the key points from lectures."},
+    {word:"series",syn:"sequence",def:"a number of things coming one after another",ex:"The company launched a .............. of training workshops."},
+    {word:"statistic",syn:"figure",def:"a numerical fact or piece of data",ex:"The .............. shows a steady increase in employment rates."},
+    {word:"status",syn:"position",def:"the social or professional standing of someone",ex:"Education often determines an individual’s social .............."},
+    {word:"stress",syn:"pressure",def:"mental or emotional strain",ex:"Excessive .............. can negatively affect health."},
+    {word:"subsequent",syn:"following",def:"coming after something else",ex:"The .............. chapters provide detailed explanations of the results."},
+    {word:"sum",syn:"total",def:"the whole amount",ex:"The .............. of all expenses was higher than expected."},
+    {word:"summary",syn:"outline",def:"a short statement of main points",ex:"The essay must end with a clear .............. of key ideas."},
+    {word:"undertake",syn:"attempt",def:"to take on or begin something",ex:"The university will .............. a new research initiative next year."},
+    {word:"academy",syn:"institute",def:"a place of specialized learning",ex:"He was accepted into an .............. of fine arts."},
+    {word:"adjust",syn:"adapt",def:"to change slightly to fit better",ex:"Students must .............. to new cultural environments when studying abroad."},
+    {word:"alter",syn:"modify",def:"to make different",ex:"The architect decided to .............. the original design."},
+    {word:"amend",syn:"revise",def:"to make minor changes for improvement",ex:"The government plans to .............. existing education policies."},
+    {word:"aware",syn:"conscious",def:"knowing about something",ex:"People are becoming more .............. of environmental issues."},
+    {word:"capacity",syn:"ability",def:"the maximum that can be contained or produced",ex:"The new hall has a seating .............. of over 500 people."},
+    {word:"challenge",syn:"test",def:"something that requires effort to overcome",ex:"Adapting to a foreign culture can be a major .............. for newcomers."},
+    {word:"clause",syn:"condition",def:"a section within a legal document",ex:"The .............. states that the contract may be terminated at any time."},
+    {word:"compound",syn:"mixture",def:"a combination of two or more parts",ex:"Water is a chemical .............. made of hydrogen and oxygen."},
+    {word:"conflict",syn:"clash",def:"a serious disagreement or argument",ex:"Effective communication helps reduce .............. in the workplace."}
+  ],
+
+  unit11: [
+    {word:"consult",syn:"advise",def:"to seek or give expert opinion",ex:"It is wise to .............. a lawyer before signing any legal documents."},
+    {word:"contact",syn:"connect",def:"to communicate with someone",ex:"Applicants can .............. the university via email for further information."},
+    {word:"decline",syn:"decrease",def:"to become smaller or weaker",ex:"The population began to .............. due to migration."},
+    {word:"discrete",syn:"separate",def:"distinct or individual",ex:"The report divides the results into .............. categories for clarity."},
+    {word:"draft",syn:"outline",def:"a preliminary version of a document",ex:"Students should prepare a .............. before writing the final essay."},
+    {word:"enable",syn:"allow",def:"to make something possible",ex:"Technology can .............. people to work more efficiently."},
+    {word:"energy",syn:"power",def:"the ability to do work or cause change",ex:"Governments should invest in renewable .............. sources."},
+    {word:"enforce",syn:"apply",def:"to make sure laws or rules are obeyed",ex:"Authorities must .............. stricter penalties for illegal dumping."},
+    {word:"entity",syn:"organization",def:"something that exists as a single unit",ex:"The World Bank is an international .............. that supports development."},
+    {word:"equivalent",syn:"equal",def:"having the same value or meaning",ex:"A score of 7 in IELTS is roughly .............. to B2 level in CEFR."},
+    {word:"evolve",syn:"develop",def:"to gradually change or grow",ex:"Human communication has continued to .............. over centuries."},
+    {word:"expand",syn:"increase",def:"to make larger or broader",ex:"The company plans to .............. its business into new markets."},
+    {word:"expose",syn:"reveal",def:"to make something visible or known",ex:"The documentary aims to .............. the effects of climate change."},
+    {word:"external",syn:"outer",def:"located outside something",ex:"The building’s .............. design attracts many tourists."},
+    {word:"facilitate",syn:"assist",def:"to make an action or process easier",ex:"The new software will .............. communication among departments."},
+    {word:"fundamental",syn:"basic",def:"forming the foundation or core",ex:"Education is a .............. human right for every individual."},
+    {word:"generate",syn:"produce",def:"to cause to exist or be created",ex:"Solar panels .............. electricity without harming the environment."},
+    {word:"generation",syn:"age group",def:"all people born around the same time",ex:"The younger .............. is more open to adopting green lifestyles."},
+    {word:"image",syn:"picture",def:"a visual representation",ex:"The media often influences the public .............. of celebrities."},
+    {word:"liberal",syn:"open-minded",def:"willing to accept new ideas",ex:"Universities encourage .............. thinking among students."},
+    {word:"license",syn:"permit",def:"an official document giving permission",ex:"Drivers must obtain a .............. before operating a vehicle."},
+    {word:"logic",syn:"reasoning",def:"correct or sound thinking",ex:"The essay lacks clear .............. between arguments and evidence."},
+    {word:"margin",syn:"edge",def:"the border or extra amount allowed",ex:"Leave a two-centimeter .............. on both sides of the page."},
+    {word:"medical",syn:"health-related",def:"concerning the treatment of illness",ex:"Access to .............. care remains limited in rural areas."},
+    {word:"mental",syn:"psychological",def:"relating to the mind",ex:"Regular exercise has proven benefits for .............. health."}
+  ],
+
+  unit12: [
+    {word:"modify",syn:"alter",def:"to make small changes",ex:"The government decided to .............. the policy to suit local needs."},
+    {word:"monitor",syn:"observe",def:"to watch and check progress",ex:"Teachers .............. students’ attendance throughout the semester."},
+    {word:"network",syn:"system",def:"a group of connected people or things",ex:"Building a professional .............. can improve job opportunities."},
+    {word:"notion",syn:"idea",def:"a belief or concept",ex:"The .............. of equality is central to modern democracy."},
+    {word:"objective",syn:"goal",def:"something aimed for or sought",ex:"The main .............. of the project is to reduce waste."},
+    {word:"orient",syn:"direct",def:"to adjust to a situation or environment",ex:"Orientation programs help students .............. themselves to university life."},
+    {word:"perspective",syn:"viewpoint",def:"a particular way of thinking about something",ex:"The documentary offers a new .............. on social inequality."},
+    {word:"precise",syn:"exact",def:"clearly expressed or accurate",ex:"It is important to use .............. vocabulary in academic writing."},
+    {word:"prime",syn:"chief",def:"of first importance",ex:"The .............. reason for studying abroad is better education quality."},
+    {word:"psychology",syn:"mindset",def:"the study of mind and behavior",ex:"She majored in .............. to understand human motivation."},
+    {word:"pursue",syn:"follow",def:"to try to achieve or obtain something",ex:"Many young people .............. higher education overseas."},
+    {word:"ratio",syn:"proportion",def:"the relationship between two quantities",ex:"The .............. of teachers to students should be reduced for better learning."},
+    {word:"reject",syn:"refuse",def:"to turn down or dismiss",ex:"The editor decided to .............. the article due to lack of evidence."},
+    {word:"revenue",syn:"income",def:"money received from business or government sources",ex:"Tourism generates significant .............. for the national economy."},
+    {word:"stable",syn:"steady",def:"not changing easily",ex:"A .............. job provides security and long-term benefits."},
+    {word:"style",syn:"manner",def:"a particular way of doing something",ex:"Each writer has a unique .............. of expressing ideas."},
+    {word:"substitute",syn:"replace",def:"to use something instead of another",ex:"Soy milk can .............. dairy milk for lactose-intolerant people."},
+    {word:"sustain",syn:"maintain",def:"to keep something going",ex:"It is vital to .............. motivation throughout the learning process."},
+    {word:"symbol",syn:"sign",def:"something that represents an idea",ex:"The dove is a .............. of peace in many cultures."},
+    {word:"target",syn:"aim",def:"an objective or goal to reach",ex:"The company set a sales .............. for the next quarter."},
+    {word:"transit",syn:"passage",def:"movement from one place to another",ex:"The airport is a major .............. hub in the region."},
+    {word:"trend",syn:"tendency",def:"a general direction of change",ex:"There is a growing .............. toward online learning."},
+    {word:"version",syn:"form",def:"a particular variation of something",ex:"The new .............. of the app includes several updates."},
+    {word:"welfare",syn:"well-being",def:"health and happiness of people",ex:"Governments should ensure the .............. of all citizens."},
+    {word:"whereas",syn:"while",def:"in contrast or comparison",ex:"Rural areas rely on agriculture, .............. cities depend on industry."}
+  ],
+
+  unit13: [
+    {word:"abstract",syn:"theoretical",def:"based on ideas rather than things",ex:"Students must understand .............. concepts in philosophy."},
+    {word:"accurate",syn:"exact",def:"free from error",ex:"The results were not completely .............. due to limited data."},
+    {word:"acknowledge",syn:"admit",def:"to accept or recognize something as true",ex:"The report failed to .............. the role of technology in progress."},
+    {word:"aggregate",syn:"total",def:"a whole formed by combining parts",ex:"The .............. number of applicants exceeded expectations."},
+    {word:"allocate",syn:"assign",def:"to distribute for a purpose",ex:"The government decided to .............. more funds for education."},
+    {word:"assign",syn:"designate",def:"to give a task or responsibility",ex:"The teacher will .............. each student a specific topic for research."},
+    {word:"attach",syn:"connect",def:"to join or fasten to something",ex:"Please .............. your CV to the email when applying."},
+    {word:"author",syn:"writer",def:"the person who created a text",ex:"The .............. of this article is a well-known environmentalist."},
+    {word:"bond",syn:"connection",def:"a close relationship or link",ex:"Family members share a strong emotional .............."},
+    {word:"brief",syn:"short",def:"lasting a short time",ex:"The meeting was .............. but productive."},
+    {word:"capable",syn:"able",def:"having the ability to do something",ex:"Students are fully .............. of achieving higher grades with effort."},
+    {word:"cite",syn:"quote",def:"to refer to a source as evidence",ex:"You must .............. all references properly in your essay."},
+    {word:"cooperate",syn:"collaborate",def:"to work together toward a goal",ex:"Countries must .............. to address global climate issues."},
+    {word:"discriminate",syn:"distinguish",def:"to treat differently based on difference",ex:"It is illegal to .............. against employees based on gender."},
+    {word:"display",syn:"show",def:"to exhibit or present",ex:"The museum will .............. rare historical artifacts next month."},
+    {word:"diverse",syn:"varied",def:"showing great variety",ex:"The city is known for its .............. population and cultures."},
+    {word:"domain",syn:"field",def:"an area of knowledge or activity",ex:"Artificial intelligence has become a major .............. of research."},
+    {word:"edit",syn:"revise",def:"to prepare written work for publication",ex:"Students must .............. their essays before submission."},
+    {word:"enhance",syn:"improve",def:"to make better or more effective",ex:"Visual aids can greatly .............. a presentation."},
+    {word:"estate",syn:"property",def:"land or buildings owned by someone",ex:"The businessman invested in real .............. to expand his wealth."},
+    {word:"exceed",syn:"surpass",def:"to go beyond a limit",ex:"The athlete managed to .............. all expectations in the competition."},
+    {word:"expert",syn:"specialist",def:"a person with deep knowledge or skill",ex:"The conference invited an .............. in environmental science."},
+    {word:"explicit",syn:"clear",def:"stated in detail, leaving no doubt",ex:"The instructions were .............. and easy to follow."},
+    {word:"federal",syn:"national",def:"relating to the central government",ex:"The .............. government sets standards for higher education."},
+    {word:"fee",syn:"charge",def:"a payment for a service",ex:"Students must pay a registration .............. before attending classes."}
+  ],
+
+  unit14: [
+    {word:"flexible",syn:"adaptable",def:"able to bend or change easily",ex:"Employers prefer candidates with a .............. work schedule."},
+    {word:"furthermore",syn:"moreover",def:"in addition to what has been said",ex:"The plan is effective; .............., it saves a lot of money."},
+    {word:"gender",syn:"sex",def:"the state of being male or female",ex:"The policy promotes equality regardless of .............."},
+    {word:"ignorant",syn:"unaware",def:"lacking knowledge or information",ex:"Many people remain .............. about the effects of pollution."},
+    {word:"incentive",syn:"motivation",def:"something that encourages action",ex:"The company offered bonuses as an .............. for better performance."},
+    {word:"incidence",syn:"occurrence",def:"the frequency of something happening",ex:"The .............. of heart disease has increased in recent years."},
+    {word:"incorporate",syn:"include",def:"to add or combine into a whole",ex:"The teacher decided to .............. more speaking activities into lessons."},
+    {word:"index",syn:"list",def:"an ordered arrangement of information",ex:"The report includes an .............. of all cited sources."},
+    {word:"inhibit",syn:"prevent",def:"to hold back or stop",ex:"Fear can .............. creativity in young learners."},
+    {word:"initiate",syn:"begin",def:"to start something",ex:"The government plans to .............. new environmental projects."},
+    {word:"input",syn:"contribution",def:"what is put in to achieve an output",ex:"Teachers value students’ .............. during classroom discussions."},
+    {word:"instruct",syn:"teach",def:"to give knowledge or orders",ex:"The supervisor will .............. new employees on safety procedures."},
+    {word:"intelligence",syn:"intellect",def:"the ability to learn and understand",ex:"Artificial .............. is changing the way industries operate."},
+    {word:"interval",syn:"gap",def:"the time or space between events",ex:"The performance will continue after a short .............."},
+    {word:"lecture",syn:"speech",def:"a talk given to teach people about a topic",ex:"The professor delivered a .............. on global economic trends."},
+    {word:"migrate",syn:"move",def:"to travel to a new place",ex:"Many people .............. from rural areas to cities in search of jobs."},
+    {word:"minimum",syn:"least",def:"the smallest possible amount",ex:"The .............. age for voting is 18 in most countries."},
+    {word:"ministry",syn:"department",def:"a government office or organization",ex:"The .............. of Education announced reforms in school curricula."},
+    {word:"motive",syn:"reason",def:"a cause for doing something",ex:"The .............. behind his research was to help the community."},
+    {word:"neutral",syn:"impartial",def:"not taking sides",ex:"Journalists must remain .............. when reporting the news."},
+    {word:"nevertheless",syn:"however",def:"in spite of that",ex:"The task was challenging; .............., the team succeeded."},
+    {word:"overseas",syn:"abroad",def:"in or to another country",ex:"Many students choose to study .............. for better opportunities."},
+    {word:"precede",syn:"come before",def:"to happen earlier",ex:"Training sessions will .............. the main event."},
+    {word:"presume",syn:"suppose",def:"to believe something without proof",ex:"We can .............. that the results will be similar in the next test."},
+    {word:"rational",syn:"logical",def:"based on reason rather than emotion",ex:"Decision-making should be .............. rather than impulsive."}
+  ],
+
+  unit15: [
+    {word:"recover",syn:"regain",def:"to get back something lost",ex:"It takes time to .............. from financial loss."},
+    {word:"reveal",syn:"uncover",def:"to make known what was hidden",ex:"The study aims to .............. the main causes of pollution."},
+    {word:"scope",syn:"range",def:"the area covered or dealt with",ex:"The .............. of this research includes social and cultural aspects."},
+    {word:"subsidy",syn:"grant",def:"money given to support something",ex:"The government offers a housing .............. for low-income families."},
+    {word:"tape",syn:"record",def:"to store sound or information",ex:"The interview was .............. for future analysis."},
+    {word:"trace",syn:"track",def:"to follow or discover by investigation",ex:"Scientists can .............. the origins of the virus through DNA analysis."},
+    {word:"transform",syn:"change",def:"to make a complete alteration",ex:"Technology continues to .............. how people communicate."},
+    {word:"transport",syn:"carry",def:"to move goods or people",ex:"Trains are used to .............. large quantities of goods across the country."},
+    {word:"underlie",syn:"support",def:"to form the basis of something",ex:"Economic factors .............. most political decisions."},
+    {word:"utilize",syn:"use",def:"to make practical use of",ex:"Students should .............. online resources to improve vocabulary."},
+    {word:"adapt",syn:"adjust",def:"to change for a new purpose or environment",ex:"People must .............. to technological advances in daily life."},
+    {word:"adult",syn:"grown-up",def:"a fully developed person",ex:"Every .............. has the right to vote in democratic countries."},
+    {word:"advocate",syn:"support",def:"to argue for or recommend",ex:"Many NGOs .............. for equal access to education."},
+    {word:"aid",syn:"help",def:"assistance or support",ex:"International organizations provide financial .............. to developing nations."},
+    {word:"channel",syn:"route",def:"a means of communication or movement",ex:"Social media is a major .............. for spreading information."},
+    {word:"chemical",syn:"substance",def:"a material with distinct molecular composition",ex:"Excessive use of .............. fertilizers harms the soil."},
+    {word:"classic",syn:"traditional",def:"judged over time as of high quality",ex:"Shakespeare’s plays are considered .............. works of literature."},
+    {word:"comprehensive",syn:"complete",def:"including all or nearly all aspects",ex:"The book offers a .............. guide to academic writing."},
+    {word:"comprise",syn:"contain",def:"to include or consist of",ex:"The committee .............. members from various departments."},
+    {word:"confirm",syn:"verify",def:"to establish truth or correctness",ex:"The study will .............. whether the results are accurate."},
+    {word:"contrary",syn:"opposite",def:"completely different",ex:"His opinion is .............. to the general belief."},
+    {word:"convert",syn:"change",def:"to transform into another form",ex:"The factory will .............. waste materials into reusable energy."},
+    {word:"couple",syn:"pair",def:"two associated people or things",ex:"A .............. of examples were given to illustrate the point."},
+    {word:"decade",syn:"ten years",def:"a period of ten years",ex:"The population has doubled in the last .............."},
+    {word:"definite",syn:"certain",def:"clearly defined or decided",ex:"There is no .............. answer to this complex issue."}
+  ],
+
+  unit16: [
+    {word:"deny",syn:"refuse",def:"to declare untrue",ex:"The company strongly .............. the allegations made against it."},
+    {word:"differentiate",syn:"distinguish",def:"to recognize what makes things different",ex:"Students must learn to .............. between formal and informal styles."},
+    {word:"dispose",syn:"discard",def:"to get rid of something",ex:"People should .............. of waste properly to protect the environment."},
+    {word:"dynamic",syn:"energetic",def:"full of energy or constant change",ex:"The city has a .............. economy that attracts investors."},
+    {word:"eliminate",syn:"remove",def:"to completely get rid of",ex:"The new vaccine helps .............. the spread of the virus."},
+    {word:"empirical",syn:"factual",def:"based on observation or experience",ex:"The research is supported by .............. evidence collected in the field."},
+    {word:"equip",syn:"furnish",def:"to provide necessary items",ex:"The school decided to .............. all classrooms with new computers."},
+    {word:"extract",syn:"remove",def:"to take out from something",ex:"Scientists can .............. useful materials from natural resources."},
+    {word:"file",syn:"record",def:"to arrange or store documents",ex:"All applications must be properly .............. for future reference."},
+    {word:"finite",syn:"limited",def:"having an end or boundary",ex:"Natural resources are .............. and should be used wisely."},
+    {word:"foundation",syn:"base",def:"the underlying support or basis",ex:"Education forms the .............. of a successful career."},
+    {word:"globe",syn:"world",def:"the planet Earth",ex:"Climate change is a problem that affects the entire .............."},
+    {word:"grade",syn:"rank",def:"a level of quality or position",ex:"Her essay received the highest .............. in the class."},
+    {word:"guarantee",syn:"promise",def:"assurance that something will happen",ex:"The company cannot .............. job security for all employees."},
+    {word:"hierarchy",syn:"ranking",def:"an ordered system of authority or importance",ex:"Every organization has a .............. of leadership."},
+    {word:"identical",syn:"same",def:"exactly alike",ex:"The two reports were almost .............. in structure and content."},
+    {word:"ideology",syn:"belief system",def:"a set of ideas or ideals",ex:"The party’s .............. is based on social equality and justice."},
+    {word:"infer",syn:"conclude",def:"to draw a conclusion from evidence",ex:"From the data, we can .............. that education improves life quality."},
+    {word:"innovate",syn:"invent",def:"to introduce new ideas or methods",ex:"Companies must .............. to remain competitive in the market."},
+    {word:"insert",syn:"add",def:"to put something inside",ex:"Please .............. your name at the top of the page."},
+    {word:"intervene",syn:"interfere",def:"to come between to change an outcome",ex:"The teacher had to .............. when the discussion became heated."},
+    {word:"isolate",syn:"separate",def:"to keep apart from others",ex:"Patients with infectious diseases must be .............. for safety."},
+    {word:"media",syn:"press",def:"communication outlets like TV or newspapers",ex:"The .............. play a crucial role in shaping public opinion."},
+    {word:"mode",syn:"method",def:"a manner or way of doing something",ex:"Online learning is becoming a common .............. of education."},
+    {word:"paradigm",syn:"model",def:"a typical example or pattern",ex:"This theory represents a new .............. in psychological research."}
+  ],
+
+  unit17: [
+    {word:"phenomenon",syn:"event",def:"something remarkable or observable",ex:"The Northern Lights are a natural .............. that amazes viewers."},
+    {word:"priority",syn:"importance",def:"something given special attention",ex:"Education should be a top .............. for every government."},
+    {word:"prohibit",syn:"forbid",def:"to officially prevent",ex:"The new law will .............. smoking in public areas."},
+    {word:"publish",syn:"release",def:"to make information available publicly",ex:"The results of the study will be .............. in an academic journal."},
+    {word:"quote",syn:"cite",def:"to repeat someone’s exact words",ex:"Always .............. your sources correctly in academic writing."},
+    {word:"release",syn:"free",def:"to set something or someone loose",ex:"The company will .............. a new version of the software next month."},
+    {word:"reverse",syn:"opposite",def:"to move backward or change direction",ex:"The government decided to .............. its previous policy decision."},
+    {word:"simulate",syn:"imitate",def:"to copy or reproduce conditions",ex:"The program can .............. real-life business situations for training."},
+    {word:"sole",syn:"only",def:"single, without others",ex:"He was the .............. representative of his country at the meeting."},
+    {word:"somewhat",syn:"partially",def:"to a small degree",ex:"The results were .............. different from the expected outcome."},
+    {word:"submit",syn:"present",def:"to hand in or offer for judgment",ex:"Students must .............. their assignments before the deadline."},
+    {word:"successor",syn:"follower",def:"a person who takes another’s position",ex:"The vice president became the natural .............. after the election."},
+    {word:"survive",syn:"endure",def:"to continue to live or exist",ex:"Only species that adapt quickly can .............. in extreme environments."},
+    {word:"thesis",syn:"dissertation",def:"a long essay on research",ex:"She wrote her .............. on climate change policies."},
+    {word:"topic",syn:"subject",def:"the theme or focus of discussion",ex:"The .............. of today’s lecture is artificial intelligence."},
+    {word:"transmit",syn:"send",def:"to pass something from one place to another",ex:"The Internet can .............. information instantly across the globe."},
+    {word:"ultimate",syn:"final",def:"the last or most important",ex:"The .............. goal of education is to develop critical thinkers."},
+    {word:"unique",syn:"special",def:"one of a kind",ex:"Each culture has its own .............. customs and traditions."},
+    {word:"visible",syn:"seen",def:"able to be perceived by the eye",ex:"The stars are clearly .............. in the night sky."},
+    {word:"voluntary",syn:"optional",def:"done by choice",ex:"Participation in the workshop is completely .............."},
+    {word:"abandon",syn:"leave",def:"to give up completely",ex:"Many farmers had to .............. their land due to drought."},
+    {word:"accompany",syn:"join",def:"to go somewhere with someone",ex:"Parents should .............. their children on school trips."},
+    {word:"accumulate",syn:"gather",def:"to collect or build up",ex:"Over time, dust can .............. on electronic devices."},
+    {word:"ambiguous",syn:"unclear",def:"having more than one meaning",ex:"The sentence was .............. and could be interpreted in two ways."},
+    {word:"append",syn:"attach",def:"to add to the end of something",ex:"Please .............. your signature at the bottom of the document."}
+  ],
+
+  unit18: [
+    {word:"appreciate",syn:"value",def:"to recognize worth or importance",ex:"People should .............. the benefits of renewable energy."},
+    {word:"arbitrary",syn:"random",def:"based on personal choice, not reason",ex:"The manager’s decision seemed completely .............. to the staff."},
+    {word:"automate",syn:"mechanize",def:"to make a process operate by itself",ex:"Many factories .............. production to save time and cost."},
+    {word:"bias",syn:"prejudice",def:"unfair preference for or against something",ex:"Media .............. can influence public opinion about political issues."},
+    {word:"chart",syn:"diagram",def:"a visual display of information",ex:"The report includes a .............. showing the company’s growth."},
+    {word:"clarify",syn:"explain",def:"to make something easy to understand",ex:"The teacher tried to .............. the complex theory using examples."},
+    {word:"commodity",syn:"product",def:"a good for sale",ex:"Oil remains one of the most valuable .............. in global trade."},
+    {word:"complement",syn:"complete",def:"to add to and improve something",ex:"Reading English books can .............. your speaking practice."},
+    {word:"conform",syn:"obey",def:"to follow rules or standards",ex:"Citizens are expected to .............. to national laws."},
+    {word:"contemporary",syn:"modern",def:"belonging to the present time",ex:"The exhibition features works by .............. artists."},
+    {word:"contradict",syn:"oppose",def:"to state the opposite",ex:"His actions completely .............. his earlier statements."},
+    {word:"crucial",syn:"vital",def:"extremely important",ex:"Time management is .............. for achieving academic success."},
+    {word:"currency",syn:"money",def:"system of money in use",ex:"The country adopted a new .............. to stabilize its economy."},
+    {word:"denote",syn:"indicate",def:"to be a sign of something",ex:"A red light usually .............. danger or warning."},
+    {word:"detect",syn:"discover",def:"to notice or find something hidden",ex:"The machine can .............. even the smallest gas leaks."},
+    {word:"deviate",syn:"diverge",def:"to move away from an expected path",ex:"The project began to .............. from its original goals."},
+    {word:"displace",syn:"replace",def:"to move something from its usual position",ex:"Thousands of residents were .............. by the flood."},
+    {word:"drama",syn:"play",def:"a story performed for an audience",ex:"The students performed a .............. about environmental issues."},
+    {word:"eventual",syn:"final",def:"happening at last",ex:"The .............. outcome of the negotiation was positive."},
+    {word:"exhibit",syn:"display",def:"to show publicly",ex:"The museum will .............. ancient artifacts from Asia."},
+    {word:"exploit",syn:"use",def:"to take advantage of something",ex:"Some companies .............. natural resources without considering sustainability."},
+    {word:"fluctuate",syn:"vary",def:"to rise and fall irregularly",ex:"Oil prices .............. depending on market demand."},
+    {word:"guideline",syn:"rule",def:"an instruction showing how to act",ex:"The report provides .............. for writing academic essays."},
+    {word:"highlight",syn:"emphasize",def:"to make something stand out",ex:"The study .............. the importance of mental health support."},
+    {word:"implicit",syn:"implied",def:"suggested but not directly stated",ex:"His speech contained an .............. message of hope."}
+  ],
+
+  unit19: [
+    {word:"induce",syn:"cause",def:"to bring about",ex:"Lack of sleep can .............. serious health problems."},
+    {word:"inevitable",syn:"unavoidable",def:"certain to happen",ex:"With rapid urbanization, traffic congestion seems .............."},
+    {word:"infrastructure",syn:"framework",def:"basic systems needed for operation",ex:"The government invested heavily in transport .............. projects."},
+    {word:"inspect",syn:"examine",def:"to look at closely",ex:"Engineers must .............. bridges regularly to ensure safety."},
+    {word:"intense",syn:"strong",def:"very great in force or degree",ex:"Students face .............. pressure during final exams."},
+    {word:"manipulate",syn:"control",def:"to influence skillfully or unfairly",ex:"Politicians sometimes .............. media to shape public perception."},
+    {word:"minimize",syn:"reduce",def:"to make something as small as possible",ex:"Companies aim to .............. waste to protect the environment."},
+    {word:"nuclear",syn:"atomic",def:"relating to the nucleus of an atom",ex:"The country plans to expand its .............. energy capacity."},
+    {word:"offset",syn:"balance",def:"to counteract or compensate for",ex:"Planting trees can help .............. carbon emissions."},
+    {word:"paragraph",syn:"section",def:"part of a written text",ex:"Each .............. should express one clear idea in an essay."},
+    {word:"plus",syn:"addition",def:"something extra or positive",ex:"Good communication skills are a major .............. in job interviews."},
+    {word:"practitioner",syn:"professional",def:"a person actively engaged in a profession",ex:"Medical .............. must keep up with new treatment methods."},
+    {word:"predominant",syn:"main",def:"most common or powerful",ex:"English is the .............. language in international business."},
+    {word:"prospect",syn:"possibility",def:"the chance that something will happen",ex:"There is a strong .............. of economic recovery next year."},
+    {word:"radical",syn:"extreme",def:"very new or different from tradition",ex:"The scientist introduced a .............. theory that challenged old beliefs."},
+    {word:"random",syn:"arbitrary",def:"without pattern or plan",ex:"The participants were selected in a .............. order."},
+    {word:"reinforce",syn:"strengthen",def:"to make stronger",ex:"Repetition helps .............. new vocabulary in memory."},
+    {word:"restore",syn:"renew",def:"to bring back to original condition",ex:"The government plans to .............. historical buildings."},
+    {word:"revise",syn:"edit",def:"to correct or improve text",ex:"Students should .............. their essays before submission."},
+    {word:"schedule",syn:"timetable",def:"a planned list of events or times",ex:"The conference .............. includes workshops and panel sessions."},
+    {word:"tense",syn:"nervous",def:"feeling anxious or stretched tight",ex:"Many people feel .............. before public speaking."},
+    {word:"terminate",syn:"end",def:"to bring to a stop",ex:"The company decided to .............. the contract early."},
+    {word:"theme",syn:"subject",def:"the main idea or topic",ex:"The .............. of the discussion was technology in education."},
+    {word:"thereby",syn:"thus",def:"by that means or because of that",ex:"The new law increased employment, .............. improving living standards."},
+    {word:"uniform",syn:"consistent",def:"the same in all cases",ex:"The rules must be applied in a .............. manner to ensure fairness."}
+  ],
+
+    unit20: [
+    {word:"vehicle",syn:"car",def:"a machine for transporting people or goods",ex:"Electric .............. are becoming increasingly popular worldwide."},
+    {word:"via",syn:"through",def:"by way of",ex:"The goods were delivered .............. air freight to reduce time."},
+    {word:"virtual",syn:"digital",def:"existing in effect but not physically",ex:"Many universities now offer .............. courses for international students."},
+    {word:"visual",syn:"seen",def:"related to sight",ex:"Infographics are an effective .............. aid in presentations."},
+    {word:"widespread",syn:"common",def:"found over a large area",ex:"Internet access has become .............. even in rural areas."},
+    {word:"accommodate",syn:"adapt",def:"to provide space or meet needs",ex:"The hotel can .............. up to 500 guests."},
+    {word:"analogy",syn:"comparison",def:"a similarity between things",ex:"The teacher used an .............. to explain a complex scientific idea."},
+    {word:"anticipate",syn:"expect",def:"to look forward to something",ex:"Experts .............. a rise in global temperatures in the coming decades."},
+    {word:"assure",syn:"guarantee",def:"to make someone confident about something",ex:"The teacher .............. students that their efforts would be rewarded."},
+    {word:"attain",syn:"achieve",def:"to reach a desired level or goal",ex:"Hard work is necessary to .............. success in any field."},
+    {word:"behalf",syn:"favor",def:"in the interest of someone",ex:"The lawyer spoke on .............. of her client during the trial."},
+    {word:"bulk",syn:"majority",def:"large size or volume",ex:"The .............. of university students prefer online materials."},
+    {word:"cease",syn:"stop",def:"to bring to an end",ex:"The company was forced to .............. production due to low demand."},
+    {word:"coherent",syn:"logical",def:"clear and well organized",ex:"A .............. essay should have clear connections between ideas."},
+    {word:"coincide",syn:"match",def:"to happen at the same time",ex:"The conference dates .............. with the national holiday."},
+    {word:"commence",syn:"begin",def:"to start",ex:"The event will .............. at 10 a.m. sharp."},
+    {word:"compatible",syn:"suitable",def:"able to exist together without conflict",ex:"The new software is fully .............. with older devices."},
+    {word:"concurrent",syn:"simultaneous",def:"happening at the same time",ex:"Several .............. studies confirmed similar results."},
+    {word:"confine",syn:"restrict",def:"to keep within limits",ex:"The discussion was .............. to economic issues only."},
+    {word:"controversy",syn:"dispute",def:"public disagreement",ex:"The new policy caused .............. among experts."},
+    {word:"converse",syn:"opposite",def:"reverse in nature or position",ex:"The .............. of poverty is wealth, but both are linked in economics."},
+    {word:"device",syn:"tool",def:"a piece of equipment made for a purpose",ex:"Smartphones have become an essential .............. for communication."},
+    {word:"devote",syn:"dedicate",def:"to give time or effort to something",ex:"Students should .............. enough time to exam preparation."},
+    {word:"diminish",syn:"decrease",def:"to make or become smaller",ex:"The effect of pollution can .............. if strict measures are taken."},
+    {word:"distort",syn:"twist",def:"to change the true meaning or shape",ex:"Media can sometimes .............. facts for sensational headlines."}
+  ],
+
+  unit21: [
+    {word:"duration",syn:"length",def:"the time something continues",ex:"The .............. of the course is six months."},
+    {word:"erode",syn:"wear away",def:"to gradually destroy or reduce",ex:"Constant rainfall can .............. soil quality over time."},
+    {word:"ethic",syn:"moral",def:"a principle of right behavior",ex:"Professional .............. require honesty and responsibility."},
+    {word:"format",syn:"layout",def:"the arrangement or design of something",ex:"The report must follow the official .............. provided by the instructor."},
+    {word:"found",syn:"establish",def:"to set up or start",ex:"The organization was .............. to support underprivileged children."},
+    {word:"inherent",syn:"innate",def:"existing naturally as part of something",ex:"Creativity is an .............. part of human nature."},
+    {word:"insight",syn:"understanding",def:"clear perception of something",ex:"The book provides valuable .............. into human behavior."},
+    {word:"integral",syn:"essential",def:"necessary to make a whole complete",ex:"Reading is an .............. part of academic success."},
+    {word:"intermediate",syn:"middle",def:"between two stages or levels",ex:"The course is designed for .............. English learners."},
+    {word:"manual",syn:"handbook",def:"a book of instructions",ex:"Every machine comes with a user .............. for reference."},
+    {word:"mature",syn:"adult",def:"fully developed",ex:"The project requires .............. decision-making from all team members."},
+    {word:"mediate",syn:"negotiate",def:"to act between sides to bring agreement",ex:"A third party was called in to .............. the dispute."},
+    {word:"medium",syn:"means",def:"a channel of communication or material",ex:"Social media has become a powerful .............. for spreading information."},
+    {word:"military",syn:"armed",def:"relating to soldiers or the army",ex:"The country increased its .............. budget due to security threats."},
+    {word:"minimal",syn:"least",def:"very small in amount",ex:"The changes in design were .............. but effective."},
+    {word:"mutual",syn:"shared",def:"experienced by two or more parties",ex:"The two countries have a .............. interest in economic cooperation."},
+    {word:"norm",syn:"standard",def:"an accepted rule or pattern",ex:"Wearing uniforms is the .............. in most schools."},
+    {word:"overlap",syn:"coincide",def:"to cover partly the same area",ex:"Some research topics may .............. with each other."},
+    {word:"passive",syn:"inactive",def:"not participating or acting",ex:"Students should not take a .............. role during discussions."},
+    {word:"portion",syn:"part",def:"a section or share of something",ex:"A large .............. of the population lives in urban areas."},
+    {word:"preliminary",syn:"initial",def:"coming before the main part",ex:"The .............. results of the study were promising."},
+    {word:"protocol",syn:"procedure",def:"an official system of rules",ex:"The meeting followed a strict .............. for decision-making."},
+    {word:"qualitative",syn:"descriptive",def:"relating to qualities rather than numbers",ex:"The study included both quantitative and .............. data."},
+    {word:"refine",syn:"improve",def:"to make more pure or precise",ex:"The company continues to .............. its production process."},
+    {word:"relax",syn:"rest",def:"to become less tense or anxious",ex:"People often .............. by listening to music after work."}
+  ],
+
+  unit22: [
+    {word:"restrain",syn:"control",def:"to hold back or limit",ex:"Parents must .............. their emotions during arguments with children."},
+    {word:"revolution",syn:"uprising",def:"a complete change or overthrow",ex:"The Industrial .............. transformed manufacturing industries."},
+    {word:"rigid",syn:"stiff",def:"not flexible or easily changed",ex:"The company’s .............. policies discourage innovation."},
+    {word:"route",syn:"path",def:"a way or road for travel",ex:"This highway is the shortest .............. to the capital city."},
+    {word:"scenario",syn:"situation",def:"an imagined sequence of events",ex:"The report presented the best and worst-case .............."},
+    {word:"sphere",syn:"domain",def:"an area of activity or interest",ex:"He made significant contributions in the .............. of science."},
+    {word:"subordinate",syn:"inferior",def:"lower in rank or position",ex:"Employees should treat their .............. with respect."},
+    {word:"supplement",syn:"addition",def:"something added to complete",ex:"Vitamins are often used as a .............. to daily nutrition."},
+    {word:"suspend",syn:"stop",def:"to temporarily halt or delay",ex:"The airline had to .............. all flights due to weather conditions."},
+    {word:"team",syn:"group",def:"people working together for a purpose",ex:"Success depends on how well the .............. cooperates."},
+    {word:"temporary",syn:"short-term",def:"lasting for a limited time",ex:"He found a .............. job during the summer holidays."},
+    {word:"trigger",syn:"activate",def:"to cause something to start",ex:"Stress can .............. health problems if not managed properly."},
+    {word:"unify",syn:"unite",def:"to bring or join together",ex:"The goal of the project is to .............. different communities."},
+    {word:"violate",syn:"break",def:"to disobey a rule or law",ex:"Companies that .............. safety regulations face heavy fines."},
+    {word:"vision",syn:"foresight",def:"the ability to imagine the future",ex:"A strong .............. is essential for effective leadership."},
+    {word:"adjacent",syn:"next to",def:"near or close in position",ex:"The restaurant is .............. to the shopping mall."},
+    {word:"albeit",syn:"although",def:"even though",ex:"The project was successful, .............. with minor delays."},
+    {word:"assemble",syn:"gather",def:"to bring together in one place",ex:"The volunteers will .............. at the park to start the cleanup."},
+    {word:"collapse",syn:"fall",def:"to break down or fail suddenly",ex:"The building began to .............. after the earthquake."},
+    {word:"colleague",syn:"coworker",def:"a person you work with",ex:"I discussed the proposal with my .............. before submitting it."},
+    {word:"compile",syn:"collect",def:"to put information together",ex:"Researchers .............. data from several sources for accuracy."},
+    {word:"conceive",syn:"imagine",def:"to form an idea in the mind",ex:"It’s hard to .............. a world without modern technology."},
+    {word:"convince",syn:"persuade",def:"to make someone believe or agree",ex:"The speaker tried to .............. the audience of his viewpoint."},
+    {word:"depress",syn:"sadden",def:"to make someone feel unhappy",ex:"Negative news can easily .............. people during difficult times."},
+    {word:"encounter",syn:"meet",def:"to face or experience something",ex:"Travelers may .............. language barriers in foreign countries."}
+  ],
+
+  unit23: [
+    {word:"enormous",syn:"huge",def:"very large in size or amount",ex:"The new project required an .............. amount of funding."},
+    {word:"forthcoming",syn:"upcoming",def:"about to happen",ex:"The .............. exam schedule will be announced next week."},
+    {word:"incline",syn:"tend",def:"to lean toward an opinion or action",ex:"People often .............. to believe information from trusted sources."},
+    {word:"integrity",syn:"honesty",def:"the quality of being morally upright",ex:"Leaders must act with .............. to gain public trust."},
+    {word:"intrinsic",syn:"essential",def:"belonging naturally to something",ex:"Kindness is an .............. human quality."},
+    {word:"invoke",syn:"call upon",def:"to appeal to or request help",ex:"The lawyer decided to .............. international law in the case."},
+    {word:"levy",syn:"charge",def:"to impose a tax or fee",ex:"The government plans to .............. additional taxes on imports."},
+    {word:"likewise",syn:"similarly",def:"in the same way",ex:"The students worked hard, and the teachers .............. made extra efforts."},
+    {word:"nonetheless",syn:"however",def:"despite that",ex:"The task was demanding; .............., they completed it on time."},
+    {word:"notwithstanding",syn:"although",def:"even though",ex:".............. the difficulties, the team achieved its goals."},
+    {word:"odd",syn:"strange",def:"unusual or unexpected",ex:"It seemed .............. that no one noticed the mistake."},
+    {word:"ongoing",syn:"continuing",def:"still happening or developing",ex:"The investigation is still .............. after several months."},
+    {word:"panel",syn:"group",def:"a team of experts or people discussing something",ex:"The .............. of judges evaluated all the presentations."},
+    {word:"persist",syn:"continue",def:"to keep doing something despite difficulty",ex:"She decided to .............. until she reached her goal."},
+    {word:"pose",syn:"present",def:"to put forward a question or problem",ex:"The report .............. several questions about future policies."},
+    {word:"reluctance",syn:"unwillingness",def:"not wanting to do something",ex:"There was some .............. among workers to accept the new system."},
+    {word:"so-called",syn:"supposed",def:"used to show something is commonly named that way",ex:"Many experts criticize these .............. “miracle diets.”"},
+    {word:"straightforward",syn:"simple",def:"easy to understand or direct",ex:"The instructions are .............. and easy to follow."},
+    {word:"undergo",syn:"experience",def:"to go through a process or change",ex:"The city will .............. major reconstruction next year."},
+    {word:"whereby",syn:"through which",def:"by which something is done",ex:"The system .............. students submit assignments online is efficient."},
+    {word:"beforehand",syn:"earlier",def:"before something happens",ex:"All participants should register .............. to save time."},
+    {word:"clarify",syn:"explain",def:"to make something clear",ex:"The teacher tried to .............. the difference between the two concepts."},
+    {word:"finalize",syn:"complete",def:"to finish or make final decisions",ex:"The team will .............. the project details by next week."},
+    {word:"precede",syn:"lead",def:"to come before in order or time",ex:"The introduction should .............. the main body of the essay."},
+    {word:"signify",syn:"mean",def:"to be a sign or symbol of something",ex:"A red rose often .............. love and passion."}
+  ],
+
+  unit24: [
+    {word:"simultaneous",syn:"concurrent",def:"happening at the same time",ex:"The two conferences will take place .............. in different cities."},
+    {word:"specify",syn:"define",def:"to state precisely or in detail",ex:"The contract must .............. the payment terms clearly."},
+    {word:"subordinate",syn:"assistant",def:"a lower-ranking person or thing",ex:"Supervisors should treat their .............. fairly."},
+    {word:"supplement",syn:"add",def:"to enhance or complete something",ex:"Students can .............. their lessons with online materials."},
+    {word:"terminate",syn:"conclude",def:"to bring to an end",ex:"The manager decided to .............. the agreement immediately."},
+    {word:"undertake",syn:"begin",def:"to start or take on responsibility",ex:"The company will .............. a new marketing campaign soon."},
+    {word:"utilize",syn:"employ",def:"to make practical use of",ex:"Teachers should .............. technology to make lessons interactive."},
+    {word:"vary",syn:"differ",def:"to be different in size, amount, or nature",ex:"Opinions about the new law .............. widely among citizens."},
+    {word:"verify",syn:"confirm",def:"to prove that something is true",ex:"Officials must .............. all documents before approval."},
+    {word:"virtual",syn:"online",def:"existing or simulated on computers",ex:"Many schools now hold .............. classes due to technological advances."},
+    {word:"voluntary",syn:"willing",def:"done freely without force",ex:"Blood donation is a .............. act that saves lives."},
+    {word:"widespread",syn:"extensive",def:"found in many places",ex:"Internet access is becoming .............. even in rural regions."},
+    {word:"withdraw",syn:"remove",def:"to take back or move away",ex:"The investor decided to .............. funds from the project."},
+    {word:"withstand",syn:"endure",def:"to resist or tolerate",ex:"The bridge is built to .............. extreme weather conditions."},
+    {word:"yield",syn:"produce",def:"to generate or give results",ex:"Hard work will eventually .............. positive outcomes."},
+    {word:"adapt",syn:"adjust",def:"to change for better use",ex:"People must .............. to changing work environments."},
+    {word:"attain",syn:"reach",def:"to succeed in achieving something",ex:"The athlete managed to .............. national recognition."},
+    {word:"compile",syn:"gather",def:"to collect and organize data",ex:"The researcher will .............. all findings into one report."},
+    {word:"conform",syn:"comply",def:"to follow rules or norms",ex:"Citizens are expected to .............. with national laws."},
+    {word:"cooperate",syn:"assist",def:"to work jointly toward the same goal",ex:"Countries must .............. to tackle global warming."},
+    {word:"derive",syn:"obtain",def:"to get something from a source",ex:"Many English words .............. from Latin origins."},
+    {word:"eliminate",syn:"remove",def:"to completely get rid of something",ex:"The new system aims to .............. human errors."},
+    {word:"expand",syn:"extend",def:"to increase in size or scope",ex:"The company plans to .............. its services to new markets."},
+    {word:"innovate",syn:"create",def:"to introduce new ideas or methods",ex:"Businesses must .............. to stay competitive in the global market."},
+    {word:"sustain",syn:"maintain",def:"to keep at a steady level",ex:"It is important to .............. motivation throughout language learning."}
+  ],
+
+  unit25: [
+    {word:"precede",syn:"come before",def:"to happen or exist before something",ex:"A brief introduction should .............. the main body of the report."},
+    {word:"proceed",syn:"continue",def:"to move forward or carry on",ex:"After a short break, the class will .............. with the next activity."},
+    {word:"prohibit",syn:"forbid",def:"to officially prevent something",ex:"The school decided to .............. the use of mobile phones during lessons."},
+    {word:"promote",syn:"encourage",def:"to help something grow or develop",ex:"The campaign aims to .............. healthy eating among children."},
+    {word:"proportion",syn:"ratio",def:"the relationship between parts of a whole",ex:"A large .............. of students prefer studying abroad."},
+    {word:"pursue",syn:"follow",def:"to try to achieve or obtain something",ex:"Many graduates .............. postgraduate degrees overseas."},
+    {word:"refine",syn:"improve",def:"to make more pure, accurate, or precise",ex:"The company continues to .............. its design based on user feedback."},
+    {word:"reinforce",syn:"strengthen",def:"to make something stronger",ex:"The new evidence will .............. the main argument in the report."},
+    {word:"regulate",syn:"control",def:"to manage according to rules or laws",ex:"Governments must .............. the use of natural resources effectively."},
+    {word:"relax",syn:"rest",def:"to become less tense or stressed",ex:"People should take short breaks to .............. during long study sessions."},
+    {word:"rely",syn:"depend",def:"to trust or need someone or something",ex:"Many people .............. on public transportation for commuting."},
+    {word:"remove",syn:"eliminate",def:"to take something away from a place",ex:"The company decided to .............. old machines and buy new ones."},
+    {word:"restore",syn:"renew",def:"to bring something back to its original condition",ex:"The government plans to .............. historic buildings in the city center."},
+    {word:"restrict",syn:"limit",def:"to set boundaries or reduce freedom",ex:"The new policy will .............. access to certain online materials."},
+    {word:"retain",syn:"keep",def:"to continue to have or hold something",ex:"It is important to .............. customer trust in any business."},
+    {word:"reveal",syn:"uncover",def:"to make known what was hidden",ex:"The study aims to .............. the main factors affecting students’ performance."},
+    {word:"revise",syn:"edit",def:"to review and make changes to improve",ex:"Students should .............. their essays before final submission."},
+    {word:"schedule",syn:"timetable",def:"a planned list of events or times",ex:"The conference .............. includes several keynote speakers."},
+    {word:"section",syn:"part",def:"a distinct division or portion of something",ex:"Each .............. of the report must focus on a specific topic."},
+    {word:"select",syn:"choose",def:"to pick something out from a group",ex:"Participants were randomly .............. for the experiment."},
+    {word:"shift",syn:"change",def:"to move from one position or condition to another",ex:"The company had to .............. its focus toward online sales."},
+    {word:"specify",syn:"state",def:"to clearly identify or describe something",ex:"The instructions should .............. the materials needed for the task."},
+    {word:"substitute",syn:"replace",def:"to use something instead of another",ex:"Many people .............. coffee with tea to reduce caffeine intake."},
+    {word:"summarize",syn:"outline",def:"to give a short statement of main points",ex:"The final paragraph should .............. the key findings of the study."},
+    {word:"vary",syn:"differ",def:"to be different in size, form, or nature",ex:"Prices for accommodation .............. depending on location."}
+  ]
+};
+
+
+
+// ====================== HELPERS ======================
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function escapeQuotes(s){return s?s.replace(/'/g,"&#39;").replace(/"/g,"&quot;"):''}
+function pageTitle(k){return `Unit ${k.replace('unit','')}`}
+function unescape(s){
+  if(!s) return '';
+  return s.replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+}
+
+// ====================== AUDIO ======================
+function playWord(word){
+  const clean = word.replace(/[^a-zA-Z\s]/g,'').trim();
+  if(!clean) return;
+  const audio = new Audio(`https://dictionary.cambridge.org/sounds/cdn/uk/${clean[0]}/${clean.substring(0,3)}/${clean}.mp3`);
+  audio.play().catch(() => {
+    const fallback = new Audio(`https://translate.google.com/translate_tts?ie=UTF-8&tl=en&client=tw-ob&q=${encodeURIComponent(clean)}`);
+    fallback.play().catch(()=>{});
+  });
+}
+
+// ====================== TIMER ======================
+function startTimer(sec, mode) {
+  console.log('Starting timer for', mode, 'with', sec, 'seconds');
+  clearTimer();
+  timeLeft = sec;
+
+  // Wait until #timer element exists before starting
+  function tryStart() {
+    const el = document.getElementById('timer');
+    if (!el) {
+      // Retry every 100ms until #timer is available
+      return setTimeout(tryStart, 100);
+    }
+
+    el.classList.remove('warning');
+    el.textContent = `Time left: ${timeLeft}s`;
+
+    timerId = setInterval(() => {
+      timeLeft--;
+      if (timeLeft >= 0) el.textContent = `Time left: ${timeLeft}s`;
+
+      if (timeLeft <= 5) el.classList.add('warning');
+      if (timeLeft <= 0) {
+        clearTimer();
+        timeoutHandler(mode);
+      }
+    }, 1000);
+  }
+
+  tryStart();
+}
+
+function clearTimer() {
+  if (timerId) {
+    clearInterval(timerId);
+    timerId = null;
+  }
+}
+
+
+// ====================== STUDENT FORM ======================
+function renderStudentForm(err=''){
+  const d = new Date().toLocaleDateString('en-GB'), t = new Date().toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit', second: '2-digit'});
+  app.innerHTML = `
+    <h1>Academic Words for Reading and Listening</h1>
+    <p class="subtle">Vocabulary Mastery for Academic Success</p>
+    <div class="form-group"><label>Full Name</label><input id="name" value="${studentName}" placeholder="Enter your name"/></div>
+    <div class="form-group"><label>Surname</label><input id="surname" value="${studentSurname}" placeholder="Enter your surname"/></div>
+    <div class="form-group"><label>Date & Time</label><p class="small">${d} | ${t}</p></div>
+    ${err ? `<p class="error">${err}</p>` : ''}
+    <div class="btn-row"><button onclick="submitStudentForm()">Start Learning</button></div>`;
+}
+function submitStudentForm(){
+  var nameEl = document.getElementById('name');
+  var surnEl = document.getElementById('surname');
+  var n = nameEl && nameEl.value ? nameEl.value.trim() : '';
+  var s = surnEl && surnEl.value ? surnEl.value.trim() : '';
+  if(!n || !s) return renderStudentForm('Both fields are required.');
+  studentName = n; studentSurname = s;
+  renderMainMenu();
+}
+
+// ====================== MENU ======================
+function renderHeaderBadged(key, back){
+  return `<div class="topbar"><span class="badge">${pageTitle(key)}</span><button class="exit-btn" onclick="${back}">Back</button></div>`;
+}
+function renderMainMenu(){
+  app.innerHTML = `
+    <h1>Academic Words for Reading and Listening</h1>
+    <p class="subtle">Welcome, <strong>${studentName} ${studentSurname}</strong></p>
+    <div class="menu-grid">
+      ${Object.keys(GROUPS).map(k => `
+        <div class="menu-card" onclick="renderUnitMenu('${k}')">
+          <h3>📘 ${pageTitle(k)}</h3>
+          <p>${GROUPS[k].length} Academic Words</p>
+        </div>
+      `).join('')}
+    </div>`;
+}
+function renderUnitMenu(key){
+  app.innerHTML = `
+    ${renderHeaderBadged(key, 'renderMainMenu()')}
+    <h1>📘 ${pageTitle(key)}</h1>
+    <div class="menu-grid">
+      <div class="menu-card" onclick="renderStudy('${key}')"><h3>📚 Study Cards</h3><p>Learn with flip cards</p></div>
+      <div class="menu-card" onclick="startQuiz('${key}','matchSyn')"><h3>🔗 Matching Synonyms</h3><p>25s per question</p></div>
+      <div class="menu-card" onclick="startQuiz('${key}','matchWord')"><h3>🔤 Matching Words</h3><p>25s per question</p></div>
+      <div class="menu-card" onclick="startQuiz('${key}','matchDef')"><h3>📖 Matching Definitions</h3><p>25s per question</p></div>
+      <div class="menu-card" onclick="startQuiz('${key}','gapFill')"><h3>🧩 Gap Filling</h3><p>30s per question</p></div>
+      <div class="menu-card" onclick="startQuiz('${key}','sentenceMake')"><h3>✍️ Sentence Making</h3><p>15 words, 2 min each</p></div>
+    </div>`;
+}
+
+// ====================== STUDY SECTION ======================
+function renderStudy(key){
+  studyIndex = 0;
+  renderStudyWord(key);
+}
+function renderStudyWord(key){
+  const list = GROUPS[key];
+  if(studyIndex >= list.length) return renderUnitMenu(key);
+  const item = list[studyIndex];
+  app.innerHTML = `
+    ${renderHeaderBadged(key, `renderUnitMenu('${key}')`)}
+    <h1>📚 Study Cards (Word ${studyIndex + 1}/${list.length})</h1>
+    <div class="study-container">
+      <div class="study-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="word-with-audio">
+            <span>${item.word}</span>
+            <button class="audio-btn" onclick="event.stopPropagation();playWord('${escapeQuotes(item.word)}')">Speaker</button>
+          </div>
+        </div>
+        <div class="card-back">
+          <p><strong>Syn:</strong> ${item.syn}</p>
+          <p><strong>Def:</strong> ${item.def}</p>
+          <p><strong>Ex:</strong> ${item.ex}</p>
+        </div>
+      </div>
+      <div class="study-nav">
+        <button onclick="studyIndex--; renderStudyWord('${key}')">Previous</button>
+        <button onclick="studyIndex++; renderStudyWord('${key}')">Next</button>
+      </div>
+    </div>`;
+  if(studyIndex === 0) document.querySelector('.study-nav button:first-child').disabled = true;
+  if(studyIndex === list.length - 1) document.querySelector('.study-nav button:last-child').disabled = true;
+}
+function flipCard(el){ el.classList.toggle('flipped'); }
+
+// ====================== START QUIZ ======================
+function startQuiz(page, type){
+  currentPageKey = page; currentExerciseType = type; qIndex = 0; score = 0; answers = [];
+  const list = GROUPS[page];
+  const len = list.length;
+  qOrder = (type === 'sentenceMake') ? shuffle([...Array(len).keys()]).slice(0,15) : shuffle([...Array(len).keys()]);
+  renderQuestion();
+}
+
+// ====================== RENDER QUESTION ======================
+function renderQuestion(){
+  clearTimer();
+  if(qIndex >= qOrder.length) return renderResults();
+  const list = GROUPS[currentPageKey];
+  const idx = qOrder[qIndex]; const item = list[idx];
+  const prog = (qIndex / qOrder.length) * 100;
+  let html = `${renderHeaderBadged(currentPageKey, `renderUnitMenu('${currentPageKey}')`)}`;
+  html += `<p style="text-align:center;font-weight:600">Q${qIndex+1}/${qOrder.length}</p>`;
+  html += `<div class="progress"><div class="progress-fill" style="width:${prog}%"></div></div>`;
+  html += `<div id="timer" class="timer">Time left: 25s</div>`;
+
+  switch(currentExerciseType){
+    case 'matchSyn':
+      const syns = shuffle([item.syn, ...shuffle(list.filter((_,i)=>i!==idx).map(o=>o.syn)).slice(0,3)]);
+      html += `<h1>🔗 Matching Synonyms</h1><h2>${item.word}</h2><div class="options">
+        ${syns.map((s,i)=>`<button class="option-btn" onclick="submitAnswer('${escapeQuotes(item.syn)}','${escapeQuotes(s)}')">${String.fromCharCode(65+i)}. ${s}</button>`).join('')}
+      </div>`;
+      startTimer(25, 'matchSyn');
+      break;
+
+    case 'matchWord':
+      const words = shuffle([item.word, ...shuffle(list.filter((_,i)=>i!==idx).map(o=>o.word)).slice(0,3)]);
+      html += `<h1>🔤 Matching Words</h1><h2>${item.syn}</h2><div class="options">
+        ${words.map((w,i)=>`<button class="option-btn" onclick="submitAnswer('${escapeQuotes(item.word)}','${escapeQuotes(w)}')">${String.fromCharCode(65+i)}. ${w}</button>`).join('')}
+      </div>`;
+      startTimer(25, 'matchWord');
+      break;
+
+    case 'matchDef':
+      const defs = shuffle([item.def, ...shuffle(list.filter((_,i)=>i!==idx).map(o=>o.def)).slice(0,3)]);
+      html += `<h1>📖 Matching Definitions</h1><h2>${item.word}</h2><div class="options">
+        ${defs.map((d,i)=>`<button class="option-btn" onclick="submitAnswer('${escapeQuotes(item.def)}','${escapeQuotes(d)}')">${String.fromCharCode(65+i)}. ${d}</button>`).join('')}
+      </div>`;
+      startTimer(25, 'matchDef');
+      break;
+
+    case 'gapFill':
+      const opts = shuffle([item.word, ...shuffle(list.filter((_,i)=>i!==idx).map(o=>o.word)).slice(0,3)]);
+      const sentence = item.ex.replace('..............', `<strong>________</strong>`);
+      html += `<h1>🧩 Gap Filling</h1><p style="font-size:18px;line-height:1.8;max-width:700px;margin:0 auto 20px">${sentence}</p><div class="options">
+        ${opts.map((w,i)=>`<button class="option-btn" onclick="submitAnswer('${escapeQuotes(item.word)}','${escapeQuotes(w)}')">${String.fromCharCode(65+i)}. ${w}</button>`).join('')}
+      </div>`;
+      startTimer(30, 'gapFill');
+      break;
+
+    case 'sentenceMake':
+      html += `<h1>✍️ Sentence Making</h1><h2>Word: ${item.word}</h2>
+        <textarea id="sentence" placeholder="Write a correct sentence using the word..." style="height:120px;"></textarea>
+        <div class="btn-row"><button onclick="submitSentence('${escapeQuotes(item.word)}')">Submit</button></div>`;
+      startTimer(120, 'sentenceMake');
+      break;
+  }
+  html += `<div id="feedback" class="feedback"></div>`;
+  app.innerHTML = html;
+}
+
+// ====================== SUBMIT ANSWER ======================
+function submitAnswer(corr, chosen){
+  clearTimer();
+  const ok = unescape(corr) === unescape(chosen);
+  if(ok) score++;
+  answers.push({word: unescape(corr), choice: unescape(chosen), correct: ok});
+  const fb = document.getElementById('feedback');
+  fb.innerHTML = ok ? `<span class="correct">Correct!</span>` : `<span class="incorrect">Wrong. Correct: <b>${unescape(corr)}</b></span>`;
+  const btn = document.createElement('button');
+  btn.textContent = (qIndex === qOrder.length-1) ? 'See Results' : 'Next';
+  btn.onclick = () => { qIndex++; renderQuestion(); };
+  fb.appendChild(btn);
+  document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+}
+
+// ====================== SENTENCE MAKING ======================
+function submitSentence(wordEsc){
+  clearTimer();
+  var sentEl = document.getElementById('sentence');
+  var sent = sentEl && sentEl.value ? sentEl.value.trim() : '';
+  if(!sent){ alert('Please write a sentence.'); return; }
+  answers.push({word: unescape(wordEsc), userSentence: sent});
+  var fb = document.getElementById('feedback');
+  fb.innerHTML = '<span class="correct">Saved: "' + sent + '"</span>';
+  var btn = document.createElement('button');
+  btn.textContent = (qIndex === qOrder.length-1) ? 'See Results' : 'Next';
+  btn.onclick = function(){ qIndex++; renderQuestion(); };
+  fb.appendChild(btn);
+}
+
+// ====================== TIMEOUT HANDLER ======================
+function timeoutHandler(mode){
+  const item = GROUPS[currentPageKey][qOrder[qIndex]];
+  answers.push({word: item.word, choice: '(timeout)', correct: false});
+  const fb = document.getElementById('feedback');
+  fb.innerHTML = `<span class="incorrect">Time's up! Correct: <b>${item.word}</b></span>`;
+  const btn = document.createElement('button');
+  btn.textContent = (qIndex === qOrder.length-1) ? 'See Results' : 'Next';
+  btn.onclick = () => { qIndex++; renderQuestion(); };
+  fb.appendChild(btn);
+  document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+}
+
+// ====================== RESULTS ======================
+function renderResults(){
+  clearTimer();
+  const total = qOrder.length;
+  const isSentence = currentExerciseType === 'sentenceMake';
+  const pct = isSentence ? 'N/A' : ((score/total)*100).toFixed(1);
+  const d = new Date().toLocaleDateString('en-GB');
+  const t = new Date().toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit', second: '2-digit'});
+
+  sendTelegramResults(d, t, pct);
+
+  const stats = isSentence ? `<div class="stat-card"><div class="stat-number">${answers.length}</div><div class="stat-label">Sentences</div></div>`
+    : `<div class="results-stats">
+        <div class="stat-card"><div class="stat-number">${score}</div><div class="stat-label">Correct</div></div>
+        <div class="stat-card"><div class="stat-number">${total-score}</div><div class="stat-label">Wrong</div></div>
+        <div class="stat-card"><div class="stat-number">${pct}%</div><div class="stat-label">Accuracy</div></div>
+      </div>`;
+
+  const channels = shuffle([
+    {name: "CD Mock Results (IELTS Channel)", url: "https://t.me/Ielts_age", cls: "mock"},
+    {name: "See Other Students' Results", url: "https://t.me/+0Ib_-iIZuAMzOGUy", cls: "results"}
+  ]);
+
+const ansHTML = isSentence ? answers.map((a,i) => `<div class="answer-item"><strong>Q${i+1}:</strong> ${a.word}<br>Your: ${a.userSentence}</div>`).join('')
+    : answers.map((a,i) => `<div class="answer-item ${a.correct?'':'incorrect'}"><strong>Q${i+1}:</strong> You chose: <b>${a.choice}</b><br>Correct: <b>${a.word}</b></div>`).join('');
+
+  app.innerHTML = `
+    <div style="transform:rotateY(180deg);transition:transform .8s">
+      <div style="transform:rotateY(-180deg)">
+        <h1>Quiz Complete!</h1>
+        <p class="subtle"><strong>${studentName} ${studentSurname}</strong></p>
+        <p class="subtle">${d} | ${t}</p>
+        ${stats}
+        <div class="btn-row">
+          <button onclick="startQuiz('${currentPageKey}','${currentExerciseType}')">Try Again</button>
+          <button onclick="renderUnitMenu('${currentPageKey}')">Other Exercise</button>
+        </div>
+        <div style="margin:30px 0;text-align:center">
+          <h3>Support us by joining our channels!</h3>
+          <div class="channel-container">
+            ${channels.map(c => `<a href="${c.url}" target="_blank" class="channel-box ${c.cls}">${c.name}</a>`).join('')}
+          </div>
+        </div>
+        <div class="answers-list"><h3>Your Answers:</h3>${ansHTML}</div>
+      </div>
+    </div>`;
+}
+
+// ====================== TELEGRAM ======================
+function sendTelegramResults(d, t, pct){
+  // Works ONLY after Vercel deploy (needs /api/telegram + env vars).
+  // Never breaks the app if Telegram fails.
+  try{
+    const CR = String.fromCharCode(13);
+    const LF = String.fromCharCode(10);
+
+    const safe = (v) => String(v ?? '').split(CR).join('').trim();
+
+    const header = `*📚 Academic Words for Reading and Listening*`;
+    const who = `👤 *Student:* ${safe(studentName)} ${safe(studentSurname)}`.trim();
+    const unit = `📘 *Unit:* ${safe(pageTitle(currentPageKey))}`;
+    const ex = `✏️ *Exercise:* ${safe(exerciseLabel(currentExerciseType))}`;
+    const time = `🗓️ *Date:* ${safe(d)}   ⏰ *Time:* ${safe(t)}`;
+
+    const lines = [header, '', who, unit, ex, time, ''];
+
+    if(currentExerciseType === 'sentenceMake'){
+      lines.push(`📝 *Sentences:* ${answers.length}`);
+      lines.push('');
+      lines.push('*Your sentences:*');
+      answers.forEach((a, i) => {
+        const w = safe(a.word);
+        // Collapse line breaks in user text for clean Telegram output
+        const s = safe(a.userSentence).split(LF).join(' ').split(CR).join(' ');
+        lines.push(`${i+1}) *${w}*: ${s}`);
+      });
+    } else {
+      lines.push(`✅ *Score:* ${score} / ${qOrder.length}   (*${pct}%*)`);
+    }
+
+    const txt = lines.join(LF);
+
+    // Local file mode can’t call /api/*
+    if(location.protocol === 'file:'){
+      if(typeof showToast === 'function') showToast('Telegram works after Vercel deploy (not in file:// mode).');
+      return;
+    }
+
+    fetch('/api/telegram', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: txt, parse_mode: 'Markdown' })
+    })
+    .then(r => r.json().catch(() => ({})).then(j => ({ ok: r.ok, j })))
+    .then(({ ok, j }) => {
+      if(!ok || j.ok === false){
+        if(typeof showToast === 'function') showToast('Telegram not sent (check Vercel env vars).');
+      }
+    })
+    .catch(() => {
+      if(typeof showToast === 'function') showToast('Telegram not sent (API missing).');
+    });
+  } catch(e){
+    // ignore
+  }
+}
+
+
+function exerciseLabel(t){
+  const map = {
+    'matchSyn': 'Matching (Synonyms)',
+    'matchWord': 'Matching (Words)',
+    'matchDef': 'Matching (Definitions)',
+    'gapFill': 'Gap Filling',
+    'sentenceMake': 'Sentence Making'
+  };
+  return map[t] || t;
+}
+
+// ====================== INIT ======================
+document.addEventListener('DOMContentLoaded', () => { renderStudentForm(); });
+</script>
+</body>
+</html>
