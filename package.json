@@ -1,0 +1,11 @@
+{
+  "name": "advanced-words",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Advanced Words quiz (static HTML) with Telegram results via Vercel serverless function",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {}
+}
